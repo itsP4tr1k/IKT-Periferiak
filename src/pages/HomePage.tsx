@@ -2,29 +2,34 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <section id="hero" className="h-[100vh] flex justify-evenly items-center">
+    <section
+      id="hero"
+      className="h-[100vh] flex justify-evenly items-center flex-wrap-reverse text-center md:text-left pt-[90px] md:pt-0"
+    >
       <div>
         <div>
-          <h2 className="text-primary text-5xl font-bold">
+          <h2 className="text-primary text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold">
             Ne elégedj meg a középszerűvel.
           </h2>
-          <h1 className="text-white text-9xl font-black py-3">FRUITFULTECH</h1>
-          <h2 className="text-primary text-5xl font-bold">
+          <h1 className="text-white text-4xl 2xs:text-5xl xs:text-6xl sm:text-7xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black py-3">
+            FRUITFULTECH
+          </h1>
+          <h2 className="text-primary text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold">
             Lépj át a következő szintre.
           </h2>
         </div>
-        <div className="mt-5 flex gap-x-3">
-          <button className="btn-shadow rounded-full py-2 px-5 bg-accent hover:bg-accent-hover font-medium text-xl">
+        <div className="mt-5 flex gap-x-3 gap-y-2 justify-center md:justify-start flex-wrap xs:flex-nowrap">
+          <button className="w-[85vw] xs:w-fit transition-all duration-200 ease-in-out btn-shadow rounded-full py-2 px-5 bg-accent hover:bg-accent-hover font-medium text-xl">
             Felfedezés
           </button>
-          <button className="btn-shadow text-accent rounded-full py-2 px-5 border-solid border-2 border-accent font-medium text-xl hover:bg-accent hover:text-[#000]">
+          <button className="w-[85vw] xs:w-fit transition-all duration-200 ease-in-out btn-shadow text-accent rounded-full py-2 px-5 border-solid border-2 border-accent font-medium text-xl hover:bg-accent hover:text-[#000]">
             Legújabb termékek
           </button>
         </div>
       </div>
       <div>
         <img
-          className="min-h-[50vh]"
+          className="self-auto max-h-[390px] 2xs:max-h-[430px] md:max-h-[350px] lg:max-h-[470px] xl:max-h-[600px]"
           src={`${process.env.PUBLIC_URL}/img/products/headphones.png`}
           alt="Headphones"
           title="Headphones"
