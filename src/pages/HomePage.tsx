@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function HomePage() {
+  const [index, setIndex] = useState(0);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  const products = ["headphones", "keyboard", "monitor", "mouse", "speakers"];
+
+  const [fadeout, setFadeout] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setIndex((prev) => (prev == products.length - 1 ? 0 : prev + 1));
+    }, 3500);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -29,10 +43,34 @@ export default function HomePage() {
       </div>
       <div>
         <img
-          className="self-auto max-h-[390px] 2xs:max-h-[430px] md:max-h-[350px] lg:max-h-[470px] xl:max-h-[600px]"
-          src={`${process.env.PUBLIC_URL}/img/products/headphones.png`}
-          alt="Headphones"
-          title="Headphones"
+          onMouseMove={(e) => {
+            const rect = document
+              .getElementById("productImage")
+              .getBoundingClientRect();
+            const x = Math.round(e.clientX - rect.left);
+            const y = Math.round(e.clientY - rect.top);
+            setX(x);
+            setY(y);
+          }}
+          onMouseLeave={() => {
+            setFadeout(true);
+
+            if (y > 0) {
+              setY(0);
+            }
+
+            if (x > 0) {
+              setX(0);
+            }
+
+            setTimeout(() => setFadeout(false), 250);
+          }}
+          id="productImage"
+          style={{ transform: `skewX(${x / 80}deg) skewY(${y / 150}deg)` }}
+          className={`${
+            fadeout && "transition ease-out duration-200"
+          } self-auto max-w-[35vw] max-h-[390px] 2xs:max-h-[430px] md:max-h-[350px] lg:max-h-[470px] xl:max-h-[600px]`}
+          src={`${process.env.PUBLIC_URL}/img/products/${products[index]}.png`}
           draggable="false"
         />
       </div>
