@@ -10,6 +10,11 @@ import {
 import Navbar from "./components/Navbar";
 
 import HomePage from "./pages/HomePage";
+import BillentyuzetPage from "./pages/BillentyuzetPage";
+import FejhallgatoPage from "./pages/FejhallgatoPage";
+import HangszoroPage from "./pages/HangszoroPage";
+import MonitorPage from "./pages/MonitorPage";
+import EgerPage from "./pages/EgerPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,23 +23,23 @@ function App() {
         <Route index element={<HomePage />}></Route>
         <Route
           path="/eger"
-          element={<h1 className="text-white text-center">Egér</h1>}
+          element={<EgerPage />}
         ></Route>
         <Route
           path="/billentyuzet"
-          element={<h1 className="text-white text-center">Billentyűzet</h1>}
+          element={<BillentyuzetPage />}
         ></Route>
         <Route
           path="/fejhallgato"
-          element={<h1 className="text-white text-center">Fejhallgató</h1>}
+          element={<FejhallgatoPage />}
         ></Route>
         <Route
           path="/hangszoro"
-          element={<h1 className="text-white text-center">Hangszóró</h1>}
+          element={<HangszoroPage />}
         ></Route>
         <Route
           path="/monitor"
-          element={<h1 className="text-white text-center">Monitor</h1>}
+          element={<MonitorPage />}
         ></Route>
       </Route>
     )

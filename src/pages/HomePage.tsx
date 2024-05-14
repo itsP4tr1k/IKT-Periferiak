@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
+  const [fadeout, setFadeout] = useState(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
-  const products = ["headphones", "keyboard", "monitor", "mouse", "speakers"];
-
-  const [fadeout, setFadeout] = useState(false);
+  const products = ["keyboard", "monitor", "mouse", "speakers", "headphone"];
+  const random = useRef(Math.floor(Math.random() * 4))
 
   useEffect(() => {
     setInterval(() => {
@@ -18,9 +18,9 @@ export default function HomePage() {
   return (
     <section
       id="hero"
-      className="h-[100vh] flex justify-evenly items-center flex-wrap-reverse text-center md:text-left pt-[90px] md:pt-0"
+      className="h-[90vh] flex justify-evenly md:items-center flex-wrap-reverse text-center md:text-left"
     >
-      <div>
+      <div className="items-start">
         <div>
           <h2 className="text-primary text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold">
             Ne elégedj meg a középszerűvel.
@@ -41,7 +41,6 @@ export default function HomePage() {
           </button>
         </div>
       </div>
-      <div>
         <img
           onMouseMove={(e) => {
             const rect = document
@@ -67,13 +66,10 @@ export default function HomePage() {
           }}
           id="productImage"
           style={{ transform: `skewX(${x / 80}deg) skewY(${y / 150}deg)` }}
-          className={`${
-            fadeout && "transition ease-out duration-200"
-          } self-auto max-w-[35vw] max-h-[390px] 2xs:max-h-[430px] md:max-h-[350px] lg:max-h-[470px] xl:max-h-[600px]`}
+          className={`z-[1] ${fadeout && "transition ease-out duration-250"} max-w-[35vw] hidden md:block`}
           src={`${process.env.PUBLIC_URL}/img/products/${products[index]}.png`}
           draggable="false"
         />
-      </div>
     </section>
   );
 }

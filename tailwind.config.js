@@ -11,10 +11,10 @@ module.exports = {
       black: "#000000",
     },
     screens: {
-      xs: "480px",
       "2xs": "380px",
+      xs: "480px",
       sm: "640px",
-      md: "768px",
+      md: "830px",
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",

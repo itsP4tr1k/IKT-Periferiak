@@ -20,7 +20,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="bg-black bg-opacity-25 md:bg-transparent fixed w-[100vw] flex items-center px-2 pb-1">
+    <nav className="z-[10] bg-black bg-opacity-25 md:bg-transparent flex items-center px-2 pb-1">
       <Link to={"/"}>
         <img
           className="max-h-[85px]"
