@@ -21,26 +21,13 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<HomePage />}></Route>
-        <Route
-          path="/eger"
-          element={<EgerPage />}
-        ></Route>
-        <Route
-          path="/billentyuzet"
-          element={<BillentyuzetPage />}
-        ></Route>
-        <Route
-          path="/fejhallgato"
-          element={<FejhallgatoPage />}
-        ></Route>
-        <Route
-          path="/hangszoro"
-          element={<HangszoroPage />}
-        ></Route>
-        <Route
-          path="/monitor"
-          element={<MonitorPage />}
-        ></Route>
+        <Route path="/termek">
+          <Route path="eger" element={<EgerPage />}></Route>
+          <Route path="billentyuzet" element={<BillentyuzetPage />}></Route>
+          <Route path="fejhallgato" element={<FejhallgatoPage />}></Route>
+          <Route path="hangszoro" element={<HangszoroPage />}></Route>
+          <Route path="monitor" element={<MonitorPage />}></Route>
+        </Route>
       </Route>
     )
   );

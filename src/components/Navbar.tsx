@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav className="z-[10] bg-black bg-opacity-25 md:bg-transparent flex items-center px-2 pb-1">
-      <Link to={"/"}>
+      <Link to="/">
         <img
           className="max-h-[85px]"
           src={`${process.env.PUBLIC_URL}/img/branding.png`}
@@ -37,11 +37,11 @@ export default function Navbar() {
             : "bg-black bg-opacity-25 md:bg-transparent flex-wrap absolute top-inherit mt-[-80px] translate-y-[100%] left-0 w-[100vw]"
         }`}
       >
-        <NavItem title={"Egér"} linkto={"/eger"} />
-        <NavItem title={"Billentyűzet"} linkto={"/billentyuzet"} />
-        <NavItem title={"Fejhallgató"} linkto={"/fejhallgato"} />
-        <NavItem title={"Hangszóró"} linkto={"/hangszoro"} />
-        <NavItem title={"Monitor"} linkto={"/monitor"} />
+        <NavItem title="Egér" linkto="/termek/eger" />
+        <NavItem title="Billentyűzet" linkto="/termek/billentyuzet" />
+        <NavItem title="Fejhallgató" linkto="/termek/fejhallgato" />
+        <NavItem title="Hangszóró" linkto="/termek/hangszoro" />
+        <NavItem title="Monitor" linkto="/termek/monitor" />
       </div>
 
       <button
