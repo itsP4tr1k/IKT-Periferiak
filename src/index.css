@@ -44,3 +44,7 @@ body {
 .btn-shadow {
   box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.4);
 }
+
+#productDescription {
+  max-width: clamp(1px, 85vw, 1400px);
+}

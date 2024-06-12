@@ -31,7 +31,7 @@ export default function HomePage() {
   return (
     <section
       id="hero"
-      className="h-[90vh] flex justify-evenly md:items-center flex-wrap-reverse text-center md:text-left"
+      className="h-[90vh] flex justify-evenly items-center flex-wrap-reverse text-center md:text-left"
     >
       <div className="items-start">
         <div>
@@ -94,9 +94,7 @@ export default function HomePage() {
             }deg)`,
             cursor: "pointer",
           }}
-          className={`z-[1] ${
-            fadeout && "transition ease-out duration-250"
-          } max-w-[35vw] hidden md:block`}
+          className="transition ease-out duration-250 max-h-[40dvh] max-w-[85vw] md:max-h-[500px] md:max-w-[35vw]"
           src={`${process.env.PUBLIC_URL}/img/products/${products[index]}.png`}
           draggable="false"
         />
